@@ -1,0 +1,59 @@
+name: smartspend
+description: "Budget manager with AI-powered transaction classification and anomaly detection"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Supabase
+  supabase_flutter: ^2.5.0
+
+  # State management (required by project brief)
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # Navigation
+  go_router: ^13.2.0
+
+  # HTTP — Claude AI API
+  http: ^1.2.1
+
+  # Charts
+  fl_chart: ^0.68.0
+
+  # Offline persistence
+  hive_flutter: ^1.1.0
+  hive: ^2.2.3
+
+  # Google Sign-In (SSO bonus)
+  google_sign_in: ^6.2.1
+
+  # Environment variables
+  flutter_dotenv: ^5.1.0
+
+  # Utilities
+  intl: ^0.20.2
+  shimmer: ^3.0.0
+  uuid: ^4.4.0
+  flutter_gen: ^5.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.4.9
+  riverpod_generator: ^2.4.0
+  hive_generator: ^2.0.1
+  flutter_lints: ^3.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - .env

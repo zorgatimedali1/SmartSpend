@@ -1,0 +1,39 @@
+// lib/shared/widgets/error_widget.dart
+// ignore_for_file: deprecated_member_use
+
+import 'package:flutter/material.dart';
+
+class AppErrorWidget extends StatelessWidget {
+  final String message;
+  final VoidCallback? onRetry;
+  const AppErrorWidget({super.key, required this.message, this.onRetry});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          Icon(Icons.wifi_off_outlined,
+              size: 56,
+              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3)),
+          const SizedBox(height: 16),
+          Text(message,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withOpacity(0.6))),
+          if (onRetry != null) ...[
+            const SizedBox(height: 16),
+            TextButton.icon(
+                onPressed: onRetry,
+                icon: const Icon(Icons.refresh),
+                label: const Text('Réessayer')),
+          ],
+        ]),
+      ),
+    );
+  }
+}
